@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CypCalibBase", "CypCalibBase\CypCalibBase.csproj", "{46EA0EBB-93D3-49B6-ABEC-CCF610850132}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CypCalib.Core", "CypCalib.Core\CypCalib.Core.csproj", "{C6B7B3A7-3715-401C-8D67-5FCAD94A6014}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CypCalib.Tests", "CypCalib.Tests\CypCalib.Tests.csproj", "{8E0C6591-A251-427C-A4A6-C1AA604710E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{46EA0EBB-93D3-49B6-ABEC-CCF610850132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46EA0EBB-93D3-49B6-ABEC-CCF610850132}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46EA0EBB-93D3-49B6-ABEC-CCF610850132}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46EA0EBB-93D3-49B6-ABEC-CCF610850132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B7B3A7-3715-401C-8D67-5FCAD94A6014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B7B3A7-3715-401C-8D67-5FCAD94A6014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B7B3A7-3715-401C-8D67-5FCAD94A6014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B7B3A7-3715-401C-8D67-5FCAD94A6014}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0C6591-A251-427C-A4A6-C1AA604710E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0C6591-A251-427C-A4A6-C1AA604710E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0C6591-A251-427C-A4A6-C1AA604710E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0C6591-A251-427C-A4A6-C1AA604710E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
