@@ -49,9 +49,12 @@ namespace CypCalib.Core.Domain.Shared
         }
     }
 
+    /**
+     * @brief 机械臂模型基类
+     */
     public abstract class RobotInfoBase
     {
-        private int _axisCnt = 1;
+        private readonly int _axisCnt;
         
         public double[] A { get; set; }
         public double[] D { get; set; }
@@ -126,7 +129,7 @@ namespace CypCalib.Core.Domain.Shared
     }
 
     /**
-     * 机械臂预标定配置
+     * @brief 机械臂预标定配置
      */
     public class RobotPreCalibConfig
     {
@@ -160,7 +163,7 @@ namespace CypCalib.Core.Domain.Shared
     }
 
     /**
-     * 机械臂主标定配置
+     * @brief 机械臂主标定配置
      */
     public class RobotMainCalibConfig
     {
@@ -175,7 +178,7 @@ namespace CypCalib.Core.Domain.Shared
     }
 
     /**
-     * 机械臂结果配置
+     * @brief 机械臂结果配置
      */
     public class RobotCalibRstConfig
     {
@@ -192,13 +195,31 @@ namespace CypCalib.Core.Domain.Shared
     
     #endregion
 
-    #region 激光跟踪仪数据类型
+    #region 信息类型定义
 
+    /**
+     * @brief 激光跟踪仪配置
+     */
     public class LaserTrackerConfig
     {
         public string IPAddress { get; set; } = "192.168.0.168";
         public LaserTrackEnum Brand { get; set; } = LaserTrackEnum.lteAPI;
         public int SMRSize { get; set; } = 0;
+    }
+
+    /**
+     * @brief 测试环境类相关信息
+     */
+    public class EnvironmentInfo
+    {
+        // 机器序列号
+        public string MachineID { get; set; } = "";
+        // 操作者
+        public string Operator { get; set; } = "";
+        // 环境温度
+        public double Temperature { get; set; } = 0;
+        // 环境湿度
+        public double Humidity { get; set; } = 0;
     }
 
     #endregion

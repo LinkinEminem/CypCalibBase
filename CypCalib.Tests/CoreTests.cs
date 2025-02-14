@@ -1,6 +1,8 @@
-﻿using CypCalib.Core.Domain.Models;
+﻿using System;
+using CypCalib.Core.Domain.Models;
 using CypCalib.Core.Domain.Modules;
 using CypCalib.Core.Domain.Shared;
+using absLib.Services;
 using Xunit;
 
 namespace CypCalib.Tests
@@ -10,8 +12,15 @@ namespace CypCalib.Tests
         [Fact]
         public void ProjectTest()
         {
-            var ProjectInfo = new ProjectInfo("TestProject", ProjectEnum.peRobotLaserCalib,
+            var projectInfo = new ProjectInfo("TestProject", ProjectEnum.peRobotLaserCalib,
                 new RobotPreLaserCalibModule());
+            var s = JsonSerializer.Serialize(projectInfo);
+            var raw = "Linkin Park!";
+            var publicKey = @"<Company><Bochu><Company/><Linkin><WhoisArmstrong></Park><Add>123!@#<ADD/>";
+            var secret = Encryptor.Encrypt(raw, publicKey);
+            Assert.Equal(Encryptor.Decrypt(secret, publicKey), raw);
+            
+            Assert.Equal("", s);
         }
     }
 }

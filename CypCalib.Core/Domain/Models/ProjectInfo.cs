@@ -11,8 +11,6 @@ namespace CypCalib.Core.Domain.Models
         public ProjectEnum ProjectType { get; }
         // 元数据，包括：版本、创建时间等
         public MetaData MetaData { get; }
-        // 保存路径
-        public string SavePath { get; set; } = "";
         // Module 接口
         public IModule Module { get; }
         

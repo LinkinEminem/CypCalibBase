@@ -68,6 +68,10 @@
       <Analyzer Include="..\packages\xunit.analyzers.1.18.0\analyzers\dotnet\cs\xunit.analyzers.fixes.dll" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\absLib\absLib.csproj">
+        <Project>{99e9fe3a-72e1-40eb-9a9a-6d97f5db0ed2}</Project>
+        <Name>absLib</Name>
+      </ProjectReference>
       <ProjectReference Include="..\CypCalib.Core\CypCalib.Core.csproj">
         <Project>{c6b7b3a7-3715-401c-8d67-5fcad94a6014}</Project>
         <Name>CypCalib.Core</Name>

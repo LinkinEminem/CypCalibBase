@@ -44,7 +44,7 @@
     <ItemGroup>
         <Compile Include="Domain\Interface\IModule.cs" />
         <Compile Include="Domain\Models\MetaData.cs" />
-        <Compile Include="Domain\Models\ProjectData.cs" />
+        <Compile Include="Domain\Models\ProjectInfo.cs" />
         <Compile Include="Domain\Modules\RobotPreLaserCalibModule.cs" />
         <Compile Include="Domain\Shared\Enums.cs" />
         <Compile Include="Domain\Shared\Types.cs" />
