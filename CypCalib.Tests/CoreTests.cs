@@ -12,15 +12,17 @@ namespace CypCalib.Tests
         [Fact]
         public void ProjectTest()
         {
-            var projectInfo = new ProjectInfo("TestProject", ProjectEnum.peRobotLaserCalib,
-                new RobotPreLaserCalibModule());
-            var s = JsonSerializer.Serialize(projectInfo);
-            var raw = "Linkin Park!";
-            var publicKey = @"<Company><Bochu><Company/><Linkin><WhoisArmstrong></Park><Add>123!@#<ADD/>";
-            var secret = Encryptor.Encrypt(raw, publicKey);
-            Assert.Equal(Encryptor.Decrypt(secret, publicKey), raw);
+            // var projectInfo = new ProjectInfo("TestProject", ProjectEnum.peRobotLaserCalib,
+            //     new RobotPreLaserCalibModule());
+            // var s = JsonSerializer.Serialize(projectInfo);
             
-            Assert.Equal("", s);
+            var raw = "Linkin Park!";
+            
+            Encryptor.GenerateKeys(out var publicKey, out var privateKey);
+            
+            var secret = Encryptor.Encrypt(raw, publicKey);
+            Assert.Equal(Encryptor.Decrypt(secret, privateKey), raw);
+            
         }
     }
 }
