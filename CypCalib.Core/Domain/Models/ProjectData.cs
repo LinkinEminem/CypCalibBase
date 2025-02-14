@@ -6,23 +6,22 @@ namespace CypCalib.Core.Domain.Models
     public class ProjectInfo
     {
         // 工程名
-        public string ProjectName { get; set; }
-
+        public string ProjectName { get; }
         // 项目类型
-        private readonly ProjectEnum _projectEnum;
-        
-        private MetaData _metaData;
-        
+        public ProjectEnum ProjectType { get; }
+        // 元数据，包括：版本、创建时间等
+        public MetaData MetaData { get; }
         // 保存路径
         public string SavePath { get; set; } = "";
-
-        public IModule Module { get; set; }
+        // Module 接口
+        public IModule Module { get; }
         
-        public ProjectInfo(string projectName, ProjectEnum projectEnum)
+        public ProjectInfo(string projectName, ProjectEnum projectType, IModule module)
         {
             ProjectName = projectName;
-            _projectEnum = projectEnum;
-            _metaData = new MetaData();
+            ProjectType = projectType;
+            MetaData = new MetaData();
+            Module = module;
         }
     }
 }

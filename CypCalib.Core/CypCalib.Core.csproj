@@ -13,6 +13,8 @@
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <LangVersion>9</LangVersion>
+        <Nullable>annotations</Nullable>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,7 +45,7 @@
         <Compile Include="Domain\Interface\IModule.cs" />
         <Compile Include="Domain\Models\MetaData.cs" />
         <Compile Include="Domain\Models\ProjectData.cs" />
-        <Compile Include="Domain\Modules\RobotLaserCalibModule.cs" />
+        <Compile Include="Domain\Modules\RobotPreLaserCalibModule.cs" />
         <Compile Include="Domain\Shared\Enums.cs" />
         <Compile Include="Domain\Shared\Types.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>

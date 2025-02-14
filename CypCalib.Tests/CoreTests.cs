@@ -1,4 +1,5 @@
 ﻿using CypCalib.Core.Domain.Models;
+using CypCalib.Core.Domain.Modules;
 using CypCalib.Core.Domain.Shared;
 using Xunit;
 
@@ -9,8 +10,8 @@ namespace CypCalib.Tests
         [Fact]
         public void ProjectTest()
         {
-            var ProjectInfo = new ProjectInfo("TestProject", ProjectEnum.peRobotLaserCalib);
-            
+            var ProjectInfo = new ProjectInfo("TestProject", ProjectEnum.peRobotLaserCalib,
+                new RobotPreLaserCalibModule());
         }
     }
 }
