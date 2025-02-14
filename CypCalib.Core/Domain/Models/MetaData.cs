@@ -4,17 +4,10 @@ namespace CypCalib.Core.Domain.Models
 {
     public class MetaData
     {
-        public DateTime CreatedTime { get; set; }
-        
-        public DateTime ModifiedTime { get; set; }
-        
-        public Version Version { get; set; }
+        public DateTime CreatedTime { get; set; } = DateTime.Now;
 
-        public MetaData()
-        {
-            CreatedTime = DateTime.Now;
-            ModifiedTime = DateTime.Now;
-            Version = new Version();
-        }
+        public DateTime ModifiedTime { get; set; } = DateTime.Now;
+
+        public Version Version { get; set; } = new Version(0, 1);
     }
 }

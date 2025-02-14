@@ -40,10 +40,19 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Domain\Interface\IModule.cs" />
         <Compile Include="Domain\Models\MetaData.cs" />
         <Compile Include="Domain\Models\ProjectData.cs" />
-        <Compile Include="Domain\Shared\BasicTypes.cs" />
+        <Compile Include="Domain\Modules\RobotLaserCalibModule.cs" />
+        <Compile Include="Domain\Shared\Enums.cs" />
+        <Compile Include="Domain\Shared\Types.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\absLib\absLib.csproj">
+        <Project>{99e9fe3a-72e1-40eb-9a9a-6d97f5db0ed2}</Project>
+        <Name>absLib</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
