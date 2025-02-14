@@ -4,6 +4,9 @@ using System.Text;
 
 namespace absLib.Services
 {
+    /**
+     * @brief RSA 加密服务，先通过 GenerateKeys 生成公有和私有密钥，公有密钥用于加密，私有用于解密
+     */
     public static class Encryptor
     {
         public static void GenerateKeys(out string publicKey, out string privateKey)
