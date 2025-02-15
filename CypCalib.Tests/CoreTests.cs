@@ -1,8 +1,4 @@
-﻿using System;
-using CypCalib.Core.Domain.Models;
-using CypCalib.Core.Domain.Modules;
-using CypCalib.Core.Domain.Shared;
-using absLib.Services;
+﻿using absLib.Services;
 using Xunit;
 
 namespace CypCalib.Tests
@@ -22,7 +18,6 @@ namespace CypCalib.Tests
             
             var secret = Encryptor.Encrypt(raw, publicKey);
             Assert.Equal(Encryptor.Decrypt(secret, privateKey), raw);
-            
         }
     }
 }
