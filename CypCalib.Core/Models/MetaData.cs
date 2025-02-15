@@ -1,6 +1,6 @@
 using System;
 
-namespace CypCalib.Core.Domain.Models
+namespace CypCalib.Core.Models
 {
     public class MetaData
     {

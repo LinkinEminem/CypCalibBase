@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using CypCalib.Core.Domain.Interface;
-using CypCalib.Core.Domain.Shared;
+using CypCalib.Core.Interface;
+using CypCalib.Core.Shared;
 
-namespace CypCalib.Core.Domain.Modules
+namespace CypCalib.Core.Modules
 {
-    public class RobotPreLaserCalibModule : IModule
+    public class RobotLaserCalibModule : IModule
     {
         public Robot6DInfo RobotInfo { get; set; } = new Robot6DInfo();
         

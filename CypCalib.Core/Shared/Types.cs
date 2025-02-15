@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using absLib.Types;
 
-namespace CypCalib.Core.Domain.Shared
+namespace CypCalib.Core.Shared
 {
     # region 数据类型定义
     

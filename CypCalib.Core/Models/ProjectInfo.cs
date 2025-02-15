@@ -1,7 +1,7 @@
-﻿using CypCalib.Core.Domain.Interface;
-using CypCalib.Core.Domain.Shared;
+﻿using CypCalib.Core.Interface;
+using CypCalib.Core.Shared;
 
-namespace CypCalib.Core.Domain.Models
+namespace CypCalib.Core.Models
 {
     public class ProjectInfo
     {

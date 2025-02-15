@@ -1,4 +1,4 @@
-﻿namespace CypCalib.Core.Domain.Shared
+﻿namespace CypCalib.Core.Shared
 {
     /**
      * @brief 工程类的枚举类型
