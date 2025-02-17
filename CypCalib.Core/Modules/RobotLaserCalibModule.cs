@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CypCalib.Core.Interface;
 using CypCalib.Core.Shared;
@@ -33,7 +33,7 @@ namespace CypCalib.Core.Modules
         private RobotPreCalibConfig _preConfig = new RobotPreCalibConfig();
         
         [ObservableProperty]
-        private List<Robot6DLaserData> _preCalibData =  new List<Robot6DLaserData>();
+        private ObservableCollection<Robot6DLaserData> _preCalibData =  new ObservableCollection<Robot6DLaserData>();
     }
 
     public partial class RobotMainCalibModule : ObservableObject, IModule
@@ -42,7 +42,7 @@ namespace CypCalib.Core.Modules
         private RobotMainCalibConfig _mainConfig = new RobotMainCalibConfig();
         
         [ObservableProperty]
-        private List<Robot6DLaserData> _mainCalibData = new List<Robot6DLaserData>();
+        private ObservableCollection<Robot6DLaserData> _mainCalibData = new ObservableCollection<Robot6DLaserData>();
     }
 
     public partial class RobotCalibRstModule : ObservableObject, IModule
