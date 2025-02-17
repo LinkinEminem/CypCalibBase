@@ -1,13 +1,17 @@
 using System;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace CypCalib.Core.Models
 {
-    public class MetaData
+    public partial class MetaData : ObservableObject
     {
-        public DateTime CreatedTime { get; set; } = DateTime.Now;
-
-        public DateTime ModifiedTime { get; set; } = DateTime.Now;
-
-        public Version Version { get; set; } = new Version(0, 1);
+        [ObservableProperty]
+        private DateTime _createdTime = DateTime.Now;
+        
+        [ObservableProperty]
+        private DateTime _modifiedTime = DateTime.Now;
+        
+        [ObservableProperty]
+        private Version _version = new Version(0, 1);
     }
 }

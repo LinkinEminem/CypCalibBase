@@ -1,32 +1,42 @@
-﻿using CypCalib.Core.Interface;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CypCalib.Core.Interface;
 using CypCalib.Core.Models;
 using CypCalib.Core.Modules;
 using CypCalib.Core.Shared;
 
 namespace CypCalib.UI.ViewModels
 {
-    public class RobotLaserCalibVM
+    public partial class RobotLaserCalibVM : ObservableObject
     {
-        public RobotLaserCalibModule Module { get; set; }
-        public ProjectInfo ProjectInfo { get; set; }
+        [ObservableProperty]
+        private RobotLaserCalibModule _module;
+
+        [ObservableProperty]
+        private ProjectInfo _projectInfo;
+
+        [ObservableProperty]
+        private RobotPreLaserCalibVM _preVM;
         
-        public RobotPreLaserCalibVM PreVM { get; set; } 
-        public RobotMainLaserCalibVM MainVM { get; set; }
-        public RobotLaserCalibRstVM RstVM { get; set; }
+        [ObservableProperty]
+        private RobotMainLaserCalibVM _mainVM;
+        
+        [ObservableProperty]
+        private RobotLaserCalibRstVM _rstVM;
 
         public RobotLaserCalibVM()
         {
-            Module = new RobotLaserCalibModule();
-            ProjectInfo = new ProjectInfo("", ProjectEnum.peRobotLaserCalib, Module);
-            PreVM = new RobotPreLaserCalibVM(Module.RobotPreCalibModule);
-            MainVM = new RobotMainLaserCalibVM(Module.RobotMainCalibModule);
-            RstVM = new RobotLaserCalibRstVM(Module.RobotCalibRstModule);
+            _module = new RobotLaserCalibModule();
+            _projectInfo = new ProjectInfo("", ProjectEnum.peRobotLaserCalib, Module);
+            _preVM = new RobotPreLaserCalibVM(Module.RobotPreCalibModule);
+            _mainVM = new RobotMainLaserCalibVM(Module.RobotMainCalibModule);
+            _rstVM = new RobotLaserCalibRstVM(Module.RobotCalibRstModule);
         }
     }
 
-    public class RobotPreLaserCalibVM
+    public partial class RobotPreLaserCalibVM : ObservableObject
     {
-        public IModule Module { get; set; }
+        [ObservableProperty]
+        private IModule _module;
 
         public RobotPreLaserCalibVM(IModule module)
         {
@@ -34,9 +44,10 @@ namespace CypCalib.UI.ViewModels
         }
     }
 
-    public class RobotMainLaserCalibVM
+    public partial class RobotMainLaserCalibVM : ObservableObject
     {
-        public IModule Module { get; set; }
+        [ObservableProperty]
+        private IModule _module;
 
         public RobotMainLaserCalibVM(IModule module)
         {
@@ -44,9 +55,10 @@ namespace CypCalib.UI.ViewModels
         }
     }
 
-    public class RobotLaserCalibRstVM
+    public partial class RobotLaserCalibRstVM : ObservableObject
     {
-        public IModule Module { get; set; }
+        [ObservableProperty]
+        private IModule _module;
 
         public RobotLaserCalibRstVM(IModule module)
         {

@@ -34,9 +34,12 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="mscorlib" />
         <Reference Include="System"/>
+        <Reference Include="System.ComponentModel.DataAnnotations" />
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
+        <Reference Include="System.Numerics" />
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
@@ -48,6 +51,19 @@
         <Project>{c6b7b3a7-3715-401c-8d67-5fcad94a6014}</Project>
         <Name>CypCalib.Core</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+      <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+      <PackageReference Include="System.Buffers" Version="4.6.0" />
+      <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+      <PackageReference Include="System.Memory" Version="4.6.0" />
+      <PackageReference Include="System.Numerics.Vectors" Version="4.6.0" />
+      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.0" />
+      <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

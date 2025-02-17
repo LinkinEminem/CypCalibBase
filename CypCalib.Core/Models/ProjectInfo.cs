@@ -1,25 +1,33 @@
-﻿using CypCalib.Core.Interface;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CypCalib.Core.Interface;
 using CypCalib.Core.Shared;
 
 namespace CypCalib.Core.Models
 {
-    public class ProjectInfo
+    public partial class ProjectInfo : ObservableObject
     {
         // 工程名
-        public string ProjectName { get; }
+        [ObservableProperty]
+        private string _projectName;
+        
         // 项目类型
-        public ProjectEnum ProjectType { get; }
+        [ObservableProperty]
+        private ProjectEnum _projectType;
+        
         // 元数据，包括：版本、创建时间等
-        public MetaData MetaData { get; }
+        [ObservableProperty]
+        private MetaData _metaData;
+        
         // Module 接口
-        public IModule Module { get; }
+        [ObservableProperty] 
+        private IModule _module;
         
         public ProjectInfo(string projectName, ProjectEnum projectType, IModule module)
         {
-            ProjectName = projectName;
-            ProjectType = projectType;
-            MetaData = new MetaData();
-            Module = module;
+            _projectName = projectName;
+            _projectType = projectType;
+            _metaData = new MetaData();
+            _module = module;
         }
     }
 }

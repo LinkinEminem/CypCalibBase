@@ -1,38 +1,53 @@
 ﻿using System.Collections.Generic;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CypCalib.Core.Interface;
 using CypCalib.Core.Shared;
 
 namespace CypCalib.Core.Modules
 {
-    public class RobotLaserCalibModule : IModule
+    public partial class RobotLaserCalibModule : ObservableObject, IModule
     {
-        public Robot6DInfo RobotInfo { get; set; } = new Robot6DInfo();
+        [ObservableProperty]
+        private Robot6DInfo _robotInfo = new Robot6DInfo();
         
-        public EnvironmentInfo EnvironmentInfo { get; set; } = new EnvironmentInfo();
+        [ObservableProperty]
+        private EnvironmentInfo _environmentInfo  = new EnvironmentInfo();
         
-        public RobotPreCalibModule RobotPreCalibModule { get; set; } = new RobotPreCalibModule();
-        public RobotMainCalibModule RobotMainCalibModule { get; set; } = new RobotMainCalibModule();
-        public RobotCalibRstModule RobotCalibRstModule { get; set; } = new RobotCalibRstModule();
+        [ObservableProperty]
+        private RobotPreCalibModule _robotPreCalibModule = new RobotPreCalibModule();
         
-        // 跟踪仪配置
-        public LaserTrackerConfig TrackerConfig { get; } = new LaserTrackerConfig();
+        [ObservableProperty]
+        private RobotMainCalibModule _robotMainCalibModule = new RobotMainCalibModule();
+        
+        [ObservableProperty]
+        private RobotCalibRstModule _robotCalibRstModule = new RobotCalibRstModule();
+        
+        [ObservableProperty]
+        private LaserTrackerConfig _trackerConfig = new LaserTrackerConfig();
         
     }
 
-    public class RobotPreCalibModule : IModule
+    public partial class RobotPreCalibModule : ObservableObject, IModule
     {
-        public RobotPreCalibConfig PreConfig { get; } = new RobotPreCalibConfig();
-        public List<Robot6DLaserData> PreCalibData { get; set; } =  new List<Robot6DLaserData>();
+        [ObservableProperty]
+        private RobotPreCalibConfig _preConfig = new RobotPreCalibConfig();
+        
+        [ObservableProperty]
+        private List<Robot6DLaserData> _preCalibData =  new List<Robot6DLaserData>();
     }
 
-    public class RobotMainCalibModule : IModule
+    public partial class RobotMainCalibModule : ObservableObject, IModule
     {
-        public RobotMainCalibConfig MainConfig { get; } = new RobotMainCalibConfig();
-        public List<Robot6DLaserData> MainCalibData { get; set; } =  new List<Robot6DLaserData>();
+        [ObservableProperty]
+        private RobotMainCalibConfig _mainConfig = new RobotMainCalibConfig();
+        
+        [ObservableProperty]
+        private List<Robot6DLaserData> _mainCalibData = new List<Robot6DLaserData>();
     }
 
-    public class RobotCalibRstModule : IModule
+    public partial class RobotCalibRstModule : ObservableObject, IModule
     {
-        public RobotCalibRstConfig RstConfig { get; } = new RobotCalibRstConfig();
+        [ObservableProperty]
+        private RobotCalibRstConfig _rstConfig = new RobotCalibRstConfig();
     }
 }
