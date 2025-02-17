@@ -26,10 +26,10 @@ namespace CypCalib.UI.ViewModels
         public RobotLaserCalibVM()
         {
             _module = new RobotLaserCalibModule();
-            _projectInfo = new ProjectInfo("", ProjectEnum.peRobotLaserCalib, Module);
-            _preVM = new RobotPreLaserCalibVM(Module.RobotPreCalibModule);
-            _mainVM = new RobotMainLaserCalibVM(Module.RobotMainCalibModule);
-            _rstVM = new RobotLaserCalibRstVM(Module.RobotCalibRstModule);
+            _projectInfo = new ProjectInfo("", ProjectEnum.peRobotLaserCalib, _module);
+            _preVM = new RobotPreLaserCalibVM(_module.RobotPreCalibModule);
+            _mainVM = new RobotMainLaserCalibVM(_module.RobotMainCalibModule);
+            _rstVM = new RobotLaserCalibRstVM(_module.RobotCalibRstModule);
         }
     }
 
@@ -40,7 +40,7 @@ namespace CypCalib.UI.ViewModels
 
         public RobotPreLaserCalibVM(IModule module)
         {
-            Module = module;
+            _module = module;
         }
     }
 
@@ -51,7 +51,7 @@ namespace CypCalib.UI.ViewModels
 
         public RobotMainLaserCalibVM(IModule module)
         {
-            Module = module;
+            _module = module;
         }
     }
 
@@ -62,7 +62,7 @@ namespace CypCalib.UI.ViewModels
 
         public RobotLaserCalibRstVM(IModule module)
         {
-            Module = module;
+            _module = module;
         }
     }
 }
