@@ -10,15 +10,29 @@ namespace CypCalib.Core.Modules
         
         public EnvironmentInfo EnvironmentInfo { get; set; } = new EnvironmentInfo();
         
-        // 数据配置
-        public RobotPreCalibConfig PreConfig { get; } = new RobotPreCalibConfig();
-        public RobotMainCalibConfig MainConfig { get; } = new RobotMainCalibConfig();
-        public RobotCalibRstConfig RstConfig { get; } = new RobotCalibRstConfig();
+        public RobotPreCalibModule RobotPreCalibModule { get; set; } = new RobotPreCalibModule();
+        public RobotMainCalibModule RobotMainCalibModule { get; set; } = new RobotMainCalibModule();
+        public RobotCalibRstModule RobotCalibRstModule { get; set; } = new RobotCalibRstModule();
         
         // 跟踪仪配置
         public LaserTrackerConfig TrackerConfig { get; } = new LaserTrackerConfig();
         
+    }
+
+    public class RobotPreCalibModule : IModule
+    {
+        public RobotPreCalibConfig PreConfig { get; } = new RobotPreCalibConfig();
         public List<Robot6DLaserData> PreCalibData { get; set; } =  new List<Robot6DLaserData>();
+    }
+
+    public class RobotMainCalibModule : IModule
+    {
+        public RobotMainCalibConfig MainConfig { get; } = new RobotMainCalibConfig();
         public List<Robot6DLaserData> MainCalibData { get; set; } =  new List<Robot6DLaserData>();
+    }
+
+    public class RobotCalibRstModule : IModule
+    {
+        public RobotCalibRstConfig RstConfig { get; } = new RobotCalibRstConfig();
     }
 }

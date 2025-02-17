@@ -36,8 +36,11 @@ namespace absLib.Tests
             Assert.Equal(6, a.C);
             Assert.Equal(new Point3D(1, 2, 3), a.Pt);
             Assert.Equal(new Point3D(4, 5, 6), a.Vec);
+            Assert.Equal(new Point6D(new Point3D(1, 2, 3), new Point3D(4, 5, 6)), a);
             Assert.Equal(new Point6D(8, 10, 12, 14, 16, 18), a + b);
             Assert.Equal(new Point6D(-6, -6, -6, -6, -6, -6), a - b);
+            Assert.Equal(217, a.Dot(b));
+            Assert.Equal(Math.Sqrt(91), a.Norm());
         }
     }
 }
