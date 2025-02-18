@@ -3,10 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CypCalib.WPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:vm="clr-namespace:CypCalib.WPF.ViewModels"
+        mc:Ignorable="d" Background="#0F0F0F" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="300" Width="520">
+    
+    <Window.DataContext>
+        <vm:MainWindowVM/>
+    </Window.DataContext>
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="New"/>
+    </Window.CommandBindings>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="#1D1D1D">
+                <MenuItem Header="文件" Foreground="White">
+                    <MenuItem Command="{Binding NewCommand}" Header="新建"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>

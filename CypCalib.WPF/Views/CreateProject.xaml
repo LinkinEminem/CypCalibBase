@@ -1,0 +1,59 @@
+﻿<Window x:Class="CypCalib.WPF.Views.CreateProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:CypCalib.WPF.Views"
+        xmlns:vm="clr-namespace:CypCalib.WPF.ViewModels"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Title="新建" Height="370" Width="337">
+    
+    <Window.DataContext>
+        <vm:CreateProjectVM/>
+    </Window.DataContext>
+    
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"> 项目类型 </TextBlock>
+        <ComboBox Grid.Row="0" Grid.Column="1" Margin="12, 6, 0, 6" VerticalAlignment="Center" Padding="5">
+            <ComboBoxItem> 机械臂激光跟踪仪标定 </ComboBoxItem>
+            <ComboBoxItem> 机械臂国标性能检测 </ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"> 设备序列号 </TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="12, 6, 0, 6" Text="{Binding SerialNum}"
+                 VerticalAlignment="Center" Padding="5"/>
+        
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"> 操作者 </TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="12, 6, 0, 6" VerticalAlignment="Center" Padding="5"/>
+        
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"> 环境温度 </TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="12, 6, 0, 6" VerticalAlignment="Center" Padding="5"/>
+        
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right"> 环境湿度 </TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="12, 6, 0, 6" VerticalAlignment="Center" Padding="5"/>
+        
+        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" Command="{Binding ConfirmCommand}" Margin="45, 15, 45, 5"> 创建 </Button>
+            <Button Grid.Column="1" Command="{Binding CancelCommand}" Margin="45, 15, 45, 5"> 取消 </Button>
+        </Grid>
+    </Grid>
+    
+</Window>
