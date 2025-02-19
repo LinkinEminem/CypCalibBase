@@ -53,10 +53,6 @@
         <Project>{c6b7b3a7-3715-401c-8d67-5fcad94a6014}</Project>
         <Name>CypCalib.Core</Name>
       </ProjectReference>
-      <ProjectReference Include="..\CypCalib.UI\CypCalib.UI.csproj">
-        <Project>{7f80a4cf-cc8b-4d16-abf4-4964647e955e}</Project>
-        <Name>CypCalib.UI</Name>
-      </ProjectReference>
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="NUnit" Version="3.5.0" />

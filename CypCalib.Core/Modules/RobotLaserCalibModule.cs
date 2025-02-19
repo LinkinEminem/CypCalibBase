@@ -11,9 +11,6 @@ namespace CypCalib.Core.Modules
         private Robot6DInfo _robotInfo = new Robot6DInfo();
         
         [ObservableProperty]
-        private EnvironmentInfo _environmentInfo  = new EnvironmentInfo();
-        
-        [ObservableProperty]
         private RobotPreCalibModule _robotPreCalibModule = new RobotPreCalibModule();
         
         [ObservableProperty]

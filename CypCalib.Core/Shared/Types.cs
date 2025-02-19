@@ -274,7 +274,7 @@ namespace CypCalib.Core.Shared
     {
         // 机器序列号
         [ObservableProperty]
-        private string _machineID = "";
+        private string _machineId = "";
         
         // 操作者
         [ObservableProperty]

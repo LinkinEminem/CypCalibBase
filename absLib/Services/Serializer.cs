@@ -2,16 +2,16 @@
 
 namespace absLib.Services
 {
-    public static class JsonSerializer
+    public static class JsonSerializeHelper
     {
         public static string Serialize(object obj)
         {
             return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
 
-        public static object Deserialize(string data)
+        public static T? Deserialize<T>(string data)
         {
-            return JsonConvert.DeserializeObject(data);
+            return JsonConvert.DeserializeObject<T>(data);
         }
     }
 }

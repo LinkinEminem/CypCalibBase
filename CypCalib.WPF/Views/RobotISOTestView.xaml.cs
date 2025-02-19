@@ -2,9 +2,9 @@
 
 namespace CypCalib.WPF.Views
 {
-    public partial class CreateProject : Window
+    public partial class RobotISOTestView : Window
     {
-        public CreateProject()
+        public RobotISOTestView()
         {
             InitializeComponent();
         }

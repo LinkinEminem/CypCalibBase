@@ -18,16 +18,26 @@ namespace CypCalib.Core.Models
         [ObservableProperty]
         private MetaData _metaData;
         
+        // 环境信息
+        [ObservableProperty]
+        private EnvironmentInfo _environmentInfo  = new EnvironmentInfo();
+        
         // Module 接口
         [ObservableProperty] 
-        private IModule _module;
+        private IModule? _module;
         
-        public ProjectInfo(string projectName, ProjectEnum projectType, IModule module)
+        public ProjectInfo(string projectName, ProjectEnum projectType, IModule? module)
         {
             _projectName = projectName;
             _projectType = projectType;
             _metaData = new MetaData();
             _module = module;
+        }
+
+        public ProjectInfo()
+        {
+            _projectName = "Untitled";
+            _metaData = new MetaData();
         }
     }
 }
