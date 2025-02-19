@@ -1,4 +1,4 @@
-﻿namespace CypCalib.Core.Domain.Interface
+﻿namespace CypCalib.Core.Interface
 {
     public interface IModule
     {

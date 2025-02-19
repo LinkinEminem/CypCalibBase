@@ -2,7 +2,7 @@ using System;
 
 namespace absLib.Types
 {
-    public readonly struct Point3D
+    public readonly struct Point3D : IEquatable<Point3D>
     {
         public double X { get; }
         public double Y { get; }
@@ -25,9 +25,30 @@ namespace absLib.Types
         {
             return Math.Sqrt(X*X + Y*Y + Z*Z);
         }
+
+        public bool Equals(Point3D other)
+        {
+            return X.Equals(other.X) && Y.Equals(other.Y) && Z.Equals(other.Z);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Point3D other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = X.GetHashCode();
+                hashCode = (hashCode * 397) ^ Y.GetHashCode();
+                hashCode = (hashCode * 397) ^ Z.GetHashCode();
+                return hashCode;
+            }
+        }
     }
 
-    public readonly struct Point6D
+    public readonly struct Point6D : IEquatable<Point6D>
     {
         public Point3D Pt { get;  }
         public Point3D Vec { get; }
@@ -65,6 +86,24 @@ namespace absLib.Types
         public double Norm()
         {
             return Math.Sqrt(X*X + Y*Y + Z*Z + A*A + B*B + C*C);
+        }
+
+        public bool Equals(Point6D other)
+        {
+            return Pt.Equals(other.Pt) && Vec.Equals(other.Vec);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Point6D other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Pt.GetHashCode() * 397) ^ Vec.GetHashCode();
+            }
         }
     }
 }
