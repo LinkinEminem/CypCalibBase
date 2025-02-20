@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace CypCalib.WPF.Services
 {
@@ -35,6 +35,22 @@ namespace CypCalib.WPF.Services
             {
                 Dir[key].Invoke(obj);
             }
+        }
+        
+        public static void WindowRegister<TOwner, TView, TViewModel>(string token, TOwner owner, Func<object, TViewModel> vmFactory)
+            where TOwner : Window, new()
+            where TView : Window, new()
+            where TViewModel : class
+        {
+            GlobalManager.Register(token, obj =>
+            {
+                var view = new TView
+                {
+                    DataContext = vmFactory(obj),
+                    Owner = owner
+                };
+                view.ShowDialog();
+            });
         }
         
         // private static bool IsCallbackRegistered(string key)

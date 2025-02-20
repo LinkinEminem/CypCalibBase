@@ -14,35 +14,34 @@ namespace CypCalib.WPF.Views
         {
             InitializeComponent();
             
-            GlobalManager.Register(Tokens.Token_WM_Show_NewProject, (obj) =>
-            {
-                var view = new NewProjectView
-                {
-                    DataContext = obj as NewProjectVM,
-                    Owner = this,
-                };
-                view.ShowDialog();
-            });
-
-            GlobalManager.Register(Tokens.Token_WM_Show_RobotLaserCalib, (obj) =>
-            {
-                var view = new RobotLaserCalibView
-                {
-                    DataContext = obj as RobotLaserCalibVM,
-                    Owner = this
-                };
-                view.ShowDialog();
-            });
+            GlobalManager.WindowRegister<MainWindow, NewProjectView, NewProjectVM>(
+                Tokens.Token_WM_Show_NewProject,
+                this,
+                obj => new NewProjectVM()
+                );
             
-            GlobalManager.Register(Tokens.Token_WM_Show_RobotISOTest, (obj) =>
-            {
-                var view = new RobotISOTestView
-                {
-                    DataContext = obj as RobotISOTestVM,
-                    Owner = this
-                };
-                view.ShowDialog();
-            });
+            GlobalManager.WindowRegister<MainWindow, RobotLaserCalibView, RobotLaserCalibVM>(
+                Tokens.Token_WM_Show_RobotLaserCalib,
+                this,
+                obj => new RobotLaserCalibVM()
+                );
+            
+            GlobalManager.WindowRegister<MainWindow, RobotISOTestView, RobotISOTestVM>(
+                Tokens.Token_WM_Show_RobotISOTest,
+                this,
+                obj => new RobotISOTestVM()
+            );
+            
+            // 上述方法等效于：
+            // GlobalManager.Register(Tokens.Token_WM_Show_NewProject, (obj) =>
+            // {
+            //     var view = new NewProjectView
+            //     {
+            //         DataContext = obj as NewProjectVM,
+            //         Owner = this,
+            //     };
+            //     view.ShowDialog();
+            // });
 
             this.Closing += (_, _) =>
             {
