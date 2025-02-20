@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Services\GlobalManager.cs" />
+    <Compile Include="Services\JsonRPCApi.cs" />
     <Compile Include="ViewModels\NewProjectVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\RobotISOTestVM.cs" />

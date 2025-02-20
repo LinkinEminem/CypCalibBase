@@ -44,12 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comms\HttpPoster.cs" />
+    <Compile Include="Interface\ICommunication.cs" />
     <Compile Include="Interface\IModule.cs" />
     <Compile Include="Models\MetaData.cs" />
     <Compile Include="Models\ProjectInfo.cs" />
     <Compile Include="Modules\RobotLaserCalibModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Enums.cs" />
+    <Compile Include="Shared\ErrCodes.cs" />
     <Compile Include="Shared\Tokens.cs" />
     <Compile Include="Shared\Types.cs" />
   </ItemGroup>

@@ -15,7 +15,7 @@ namespace CypCalib.WPF.Services
         
         public static void Register(string key, Action<object> action)
         {
-            if (!String.IsNullOrEmpty(key) && !Dir.ContainsKey(key))
+            if (!string.IsNullOrEmpty(key) && !Dir.ContainsKey(key))
             {
                 Dir.Add(key, action);
             }
@@ -42,7 +42,7 @@ namespace CypCalib.WPF.Services
             where TView : Window, new()
             where TViewModel : class
         {
-            GlobalManager.Register(token, obj =>
+            Register(token, obj =>
             {
                 var view = new TView
                 {
