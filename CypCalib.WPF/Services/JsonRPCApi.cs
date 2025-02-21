@@ -8,14 +8,14 @@ namespace CypCalib.WPF.Services
     {
         private const string Url = "http://localhost:5060/fsNc";
 
-        private static readonly HttpPoster HttpPoster = new(Url);
+        private static readonly JsonRpcPoster JsonRpcPoster = new(Url);
 
         private static ErrCodes AssembleCmd(string method, JObject param)
         {
             param.Add("method", method);
-            param.Add("jsonrpc", 2.0);
+            param.Add("jsonrpc", "2.0");
             param.Add("id", 0);
-            var rst = HttpPoster.Post(param.ToString());
+            var rst = JsonRpcPoster.Post(param.ToString());
 
             if (string.IsNullOrEmpty(rst))
             {
@@ -35,10 +35,47 @@ namespace CypCalib.WPF.Services
         
         public static ErrCodes RobotMcsMoveTo(double[] config)
         {
-            var obj = new JObject();
             var arr = new JArray { config };
-            obj["params"] = arr;
-            return AssembleCmd("McsSafeMoveTo", obj);
+            var obj = new JObject
+            {
+                ["params"] = arr
+            };
+            return AssembleCmd("OTIIMcsSafeMoveTo", obj);
         }
+
+        public static ErrCodes RobotMcsPlanMoveTo(double[] config)
+        {
+            var arr = new JArray { config };
+            var obj = new JObject
+            {
+                ["params"] = arr
+            };
+            return AssembleCmd("McsPlanMoveTo", obj);
+        }
+        
+        public static ErrCodes RobotDecStop()
+        {
+            var obj = new JObject
+            {
+                ["params"] = new JArray()
+            };
+            return AssembleCmd("DecStopRobot", obj);
+        }
+
+        public static ErrCodes RobotWriteParam(double[] configs)
+        {
+            var arr = new JArray();
+            foreach (var config in configs)
+            {
+                arr.Add(config);
+            }
+
+            var obj = new JObject
+            {
+                ["params"] = arr
+            };
+            return AssembleCmd("OTIIModifyRobotParam", obj);
+        }
+        
     }
 }

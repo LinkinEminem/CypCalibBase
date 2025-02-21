@@ -7,6 +7,11 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
         Title="机械臂 ISO 性能检测" Height="450" Width="800">
     <Grid Margin="16">
-        <TextBlock> 这是机械臂国标检测 </TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"> 这是机械臂国标检测 </TextBlock>
+        <Button Grid.Row="1" Command="{Binding TestCommApiCommand}"> CypWeld Api 测试：McsMoveTo </Button>
     </Grid>
 </Window>

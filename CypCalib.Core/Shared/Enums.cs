@@ -20,7 +20,10 @@
     {
         ERR_SUCCESS = 0,
         ERR_JSONRPC_RESP_EMPTY = -0x100,
-        ERR_JSONRPC_EXEX_FIALED = -0x101
+        ERR_JSONRPC_EXEX_FIALED = -0x101,
+        
+        
+        ERR_FSM_MANAGER_BUSY = -0x200,
     }
     
 }

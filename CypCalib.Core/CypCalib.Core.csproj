@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,7 +29,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -44,9 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comms\HttpPoster.cs" />
+    <Compile Include="Comms\JsonRpcPoster.cs" />
     <Compile Include="Interface\ICommunication.cs" />
     <Compile Include="Interface\IModule.cs" />
+    <Compile Include="Interface\IStateMachine.cs" />
     <Compile Include="Models\MetaData.cs" />
     <Compile Include="Models\ProjectInfo.cs" />
     <Compile Include="Modules\RobotLaserCalibModule.cs" />

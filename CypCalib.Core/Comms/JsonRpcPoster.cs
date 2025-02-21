@@ -7,11 +7,11 @@ using CypCalib.Core.Interface;
 
 namespace CypCalib.Core.Comms
 {
-    public class HttpPoster : ICommunication
+    public class JsonRpcPoster : ICommunication
     {
         private readonly string _url;
 
-        public HttpPoster(string url)
+        public JsonRpcPoster(string url)
         {
             _url = url;
         }
