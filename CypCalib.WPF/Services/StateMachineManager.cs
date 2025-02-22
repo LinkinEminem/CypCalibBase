@@ -1,7 +1,7 @@
 ﻿using CypCalib.Core.Interface;
 using CypCalib.Core.Shared;
 
-namespace CypCalib.WPF.Services.FSM
+namespace CypCalib.WPF.Services
 {
     public class StateMachineManager
     {
