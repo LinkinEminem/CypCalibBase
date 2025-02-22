@@ -1,5 +1,6 @@
 ﻿using System;
 using CypCalib.Core.Interface;
+using Newtonsoft.Json.Linq;
 
 namespace CypCalib.WPF.Services.FSM
 {
@@ -18,6 +19,7 @@ namespace CypCalib.WPF.Services.FSM
         public bool IsCompleted { get; private set; } = false;
         private readonly object _lockObject = new();
 
+        public event Action<JObject> StateChanged = delegate { };
         private int _test = 0;
         
         public void StartOrResume()
@@ -49,7 +51,11 @@ namespace CypCalib.WPF.Services.FSM
                 {
                     try
                     {
-                        LogHelper.Info($"Test = {_test}");
+                        StateChanged?.Invoke(new JObject
+                        {
+                            ["test"] = _test
+                        });
+                        LogHelper.Debug($"Test = {_test}");
                     }
                     catch (Exception)
                     {
@@ -62,12 +68,20 @@ namespace CypCalib.WPF.Services.FSM
 
                 case 1:
                 {
+                    StateChanged?.Invoke(new JObject
+                    {
+                        ["test"] = _test
+                    });
                     _substate += 1;
                     break;
                 }
 
                 case 2:
                 {
+                    StateChanged?.Invoke(new JObject
+                    {
+                        ["test"] = _test
+                    });
                     _test += 1;
                     _substate += 1;
                     break;
@@ -75,7 +89,11 @@ namespace CypCalib.WPF.Services.FSM
 
                 case 3:
                 {
-                    if (_test > 4)
+                    StateChanged?.Invoke(new JObject
+                    {
+                        ["test"] = _test
+                    });
+                    if (_test > 5)
                     {
                         DoMoveDone();
                     }

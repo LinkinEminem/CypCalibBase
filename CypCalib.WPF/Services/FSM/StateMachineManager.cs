@@ -22,18 +22,19 @@ namespace CypCalib.WPF.Services.FSM
         
         public bool IsCompleted => false;
         
-        public ErrCodes StartOrResume(IStateMachine curTask)
+        public ErrCodes StartOrResume(IStateMachine newTask)
         {
             lock (_lockObject)
             {
                 if (_state == ManagerState.running)
                 {
+                    LogHelper.Warn($"主状态机忙，{_curTask.ToString()} 正在执行，禁止切换至 {newTask.ToString()}。");
                     return ErrCodes.ERR_FSM_MANAGER_BUSY;
                 }
                 _state = ManagerState.running;
-                _curTask = curTask;
+                _curTask = newTask;
                 _curTask?.StartOrResume();
-                LogHelper.Info($"主状态机加载：{curTask.ToString()}");
+                LogHelper.Info($"主状态机加载并开始运行：{newTask.ToString()}。");
             }
             return ErrCodes.ERR_SUCCESS;
         }

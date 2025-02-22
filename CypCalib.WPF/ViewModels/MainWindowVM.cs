@@ -11,7 +11,7 @@ namespace CypCalib.WPF.ViewModels
 {
     public partial class MainWindowVM : ObservableObject
     {
-        private const int TIMER_INTERVAL = 10;
+        private const int TIMER_INTERVAL = 100;
         private readonly StateMachineManager _stateMachineManager = StateMachineManager.Instance;
         private Timer _timer;
         private readonly object _syncLock = new object();
@@ -28,7 +28,7 @@ namespace CypCalib.WPF.ViewModels
             };
             _timer.AutoReset = true;
             _timer.Start();
-            LogHelper.Debug("主状态机初始化完成。");
+            LogHelper.Info("主状态机初始化完成。");
         }
         
         public MainWindowVM()
