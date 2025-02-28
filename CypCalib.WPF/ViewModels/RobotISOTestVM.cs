@@ -1,5 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Windows;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CypCalib.Core.Helper;
+using CypCalib.Core.Shared;
 using CypCalib.WPF.Services;
 
 namespace CypCalib.WPF.ViewModels
@@ -9,7 +12,11 @@ namespace CypCalib.WPF.ViewModels
         [RelayCommand]
         private void TestCommApi()
         {
-            CypWeldJsonRpcApi.RobotMcsMoveTo(new double[] { 0, 0, 0, 0, 0, 0 });
+            var rst = LaserTrackerHelper.Instance.DisconnectAsync().Result;
+            if(rst.Code != ErrCodes.SUCCESS.Code)
+            {
+                MessageBox.Show(rst.Message);
+            }
         }
     }
 }

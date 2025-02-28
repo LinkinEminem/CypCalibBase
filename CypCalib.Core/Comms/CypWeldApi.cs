@@ -19,17 +19,17 @@ namespace CypCalib.WPF.Services
 
             if (string.IsNullOrEmpty(rst))
             {
-                return ErrCodes.ERR_JSONRPC_RESP_EMPTY;
+                return ErrCodes.JSONRPC_RESP_EMPTY;
             }
 
             try
             {
                 var jsonResp = JObject.Parse(rst);
-                return jsonResp["result"]?.ToString() == "True" ? ErrCodes.ERR_SUCCESS : ErrCodes.ERR_JSONRPC_EXEX_FIALED;
+                return jsonResp["result"]?.ToString() == "True" ? ErrCodes.SUCCESS : ErrCodes.JSONRPC_EXEX_FAILED;
             }
             catch
             {
-                return ErrCodes.ERR_JSONRPC_EXEX_FIALED;
+                return ErrCodes.JSONRPC_EXEX_FAILED;
             }
         }
         

@@ -80,7 +80,7 @@ namespace CypCalib.WPF.ViewModels
                 });
             };
             var rst = StateMachineManager.Instance.StartOrResume(fsm);
-            if (rst.Code != ErrorCodeEnum.ERR_SUCCESS)
+            if (rst.Code != ErrorCodeEnum.SUCCESS)
             {
                 MessageBox.Show(rst.Message);
             }

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using CypCalib.Core.Helper;
 using CypCalib.Core.Shared;
 using CypCalib.WPF.Services;
 using CypCalib.WPF.ViewModels;
@@ -43,9 +44,16 @@ namespace CypCalib.WPF.Views
             //     view.ShowDialog();
             // });
 
+            this.SourceInitialized += (_, __) =>
+            {
+                LogHelper.Info("MainWindow 打开。");
+            };
+            
             this.Closing += (_, _) =>
             {
                 GlobalManager.Unregister(Tokens.Token_WM_Show_NewProject);
+                
+                LogHelper.Info("MainWindow 关闭。");
             };
         }
     }

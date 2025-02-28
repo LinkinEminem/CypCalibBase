@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace CypCalib.WPF.Services
+namespace CypCalib.Core.Helper
 {
     public static class LogHelper
     {
